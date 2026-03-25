@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snap Decision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;1,9..144,200;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── SETUP ──────────────────────────────────────────────── -->
+  <section id="setup-screen" class="screen active">
+    <div class="setup-inner">
+
+      <div class="brand-row">
+        <span class="wordmark">snap decision</span>
+        <span class="brand-tag">gut over logic</span>
+      </div>
+
+      <div class="setup-body">
+        <h1 class="setup-heading">What are you<br/><em>stuck on?</em></h1>
+
+        <div class="field-group">
+          <label class="field-label">context <span class="label-opt">(optional)</span></label>
+          <input
+            type="text"
+            id="contextInput"
+            class="text-input"
+            placeholder="e.g. choosing between job offers"
+            maxlength="80"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">your three options</label>
+          <div class="options-stack">
+            <div class="opt-row">
+              <span class="opt-badge">A</span>
+              <input type="text" class="opt-input" id="opt0" placeholder="Option one" maxlength="40" autocomplete="off" />
+            </div>
+            <div class="opt-divider"></div>
+            <div class="opt-row">
+              <span class="opt-badge">B</span>
+              <input type="text" class="opt-input" id="opt1" placeholder="Option two" maxlength="40" autocomplete="off" />
+            </div>
+            <div class="opt-divider"></div>
+            <div class="opt-row">
+              <span class="opt-badge">C</span>
+              <input type="text" class="opt-input" id="opt2" placeholder="Option three" maxlength="40" autocomplete="off" />
+            </div>
+          </div>
+        </div>
+
+        <button class="begin-btn" id="beginBtn">
+          <span class="btn-text">ask me three things</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <p class="form-hint" id="formHint">enter all three options to continue</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── QUESTION ───────────────────────────────────────────── -->
+  <section id="question-screen" class="screen">
+    <div class="question-inner">
+
+      <div class="q-top">
+        <div class="step-track">
+          <div class="step-fill" id="stepFill"></div>
+        </div>
+        <span class="step-label" id="stepLabel">Question 1 of 3</span>
+      </div>
+
+      <div class="q-body">
+        <span class="q-eyebrow" id="qEyebrow"></span>
+        <h2 class="q-text" id="qText"></h2>
+      </div>
+
+      <div class="q-cards" id="qCards"></div>
+
+      <p class="q-nudge">don't think. just tap.</p>
+
+    </div>
+  </section>
+
+  <!-- ── PROCESSING ─────────────────────────────────────────── -->
+  <section id="processing-screen" class="screen">
+    <div class="processing-inner">
+      <svg class="proc-ring" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20" class="ring-bg"/>
+        <circle cx="24" cy="24" r="20" class="ring-prog" id="ringProg"/>
+      </svg>
+      <span class="proc-label">reading your gut</span>
+    </div>
+  </section>
+
+  <!-- ── RESULT ─────────────────────────────────────────────── -->
+  <section id="result-screen" class="screen">
+    <div class="result-inner" id="resultInner">
+
+      <div class="result-top">
+        <span class="result-eyebrow">your gut says</span>
+        <h2 class="result-name" id="resultName"></h2>
+      </div>
+
+      <p class="result-why" id="resultWhy"></p>
+
+      <div class="signals-list" id="signalsList"></div>
+
+      <button class="again-btn" id="againBtn">decide again</button>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
